@@ -1,0 +1,22 @@
+﻿<Application x:Class="WPF30SEP.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF30SEP"
+             xmlns:vm="clr-namespace:WPF30SEP.ViewModels"
+             xmlns:l="clr-namespace:WPF30SEP.Infrastructure.Commands"
+             xmlns:conv="clr-namespace:WPF30SEP.Converters"
+
+             StartupUri="Views/Windows/MainWindow.xaml">
+    <Application.Resources>
+        <vm:DecanatViewModel x:Key="decanatVM"/>
+
+        <l:CloseWindow x:Key="CloseWindowBottons"/>
+        <l:ManageStudentCommand x:Key="ManageStudentBotton"/>
+        <l:CloseStudentEditorWindow x:Key="CloseStudentEditorWindow"/>
+        <l:CloseStudentEditorDialog x:Key="CloseStudentEditorDialog"/>
+
+
+        <conv:LinerConverter x:Key="LinerConverter" K="4"/>
+
+    </Application.Resources>
+</Application>
