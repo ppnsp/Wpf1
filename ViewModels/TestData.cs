@@ -30,7 +30,5 @@ namespace WPF30SEP.ViewModels
                     });         
             return groups.SelectMany(g => g.Students).ToList();
         }
-            
-
     }
 }
