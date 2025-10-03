@@ -14,9 +14,10 @@ namespace WPF30SEP.Converters
         [ConstructorArgument("K")]
         public int K { get; set; }
 
-        LinerConverter() { K = 2; }
 
-        LinerConverter(int k) { this.K = k; }
+        public LinerConverter() { K = 2; }
+
+        public LinerConverter(int k) { this.K = k; }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
