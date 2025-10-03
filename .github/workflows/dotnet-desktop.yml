@@ -1,0 +1,38 @@
+name: .NET Desktop Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest # Для WPF/WinForms требуется Windows
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x # Укажите вашу версию .NET
+
+    - name: Restore dependencies
+      run: dotnet restore ./WPF30SEP.sln # Путь к вашему решению
+
+    - name: Build
+      run: dotnet build ./WPF30SEP.sln --configuration Release --no-restore
+
+    # Дополнительные шаги (опционально):
+   # - name: Run tests
+   #   run: dotnet test ./WPF30SEP.sln --configuration Release --no-build
+
+#    - name: Publish artifacts
+ #     run: dotnet publish ./WPF30SEP.csproj --configuration Release --output publish
+  #    if: success()
+   # - uses: actions/upload-artifact@v3
+    #  with:
+     #   name: app
+      #  path: publish/
