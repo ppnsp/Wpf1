@@ -1,0 +1,3 @@
+[submodule "подмодуль"]
+	path = подмодуль
+	url = https://github.com/ppnsp/Tests.git
